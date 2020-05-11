@@ -1,0 +1,7 @@
+c,3,MacBook,10
+b,6,Life,5
+b,7,Beautiful,1
+b,8,Life,5
+b,9,Beautiful1,1
+b,10,Life1,5
+b,11,Beautiful2,1
