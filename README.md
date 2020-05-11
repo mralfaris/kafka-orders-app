@@ -19,6 +19,8 @@ The applications run on Java 8 on Docker Containers. The messaging platform Kafk
   - DD9: ACL policy will enforce authroization rules on consumers and producers.
 
 ## File and Data Format
+  - Order input file: is a CSV file having values in the following order (Order Type, Order Id, Item Name, Quantity).
+  - Order status message: A comma-separated text with two values (Order Id, Order Status).
 
 
 ## To Do
