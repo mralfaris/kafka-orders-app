@@ -5,14 +5,14 @@ The app is split into
   - Book Order Fulfillment Application: Receives book orders and processes them.
   - Computer Order Fulfillment Application: Receives computer orders and processes them.
 
-The applications run on Java 8 on Docker Containers. The messaging platform Kafka runs a Docker Container.
+The applications run on Java 8 on Docker Containers. The messaging platform Kafka runs as a Docker Container.
 
 ## Design Decisions
   - DD1: There are two topics created of Kafka broker, one for orders and the other one for order status.
   - DD2: Order topic has two partitions, one partition is for Book orders and the second partition is for Computer orders.
   - DD3: Order status is sent for both Book and Computer orders on the same topic.
-  - DD4: Order messages are being polled from the dedicated partition and processed immediately.
-  - DD5: Order status messages are being polled from order status topic every 10 seconds.
+  - DD4: Order messages are polled by Computer and Book Order Fulfillment Application from the dedicated partition and then processed immediately.
+  - DD5: Order status messages are being polled by Order Management Application from order status topic every 10 seconds. Then status is displayed on the screen.
   - DD6: Messages are sent as text (String) with comma-separated values.
   - DD7: TLS to be used to secure the channel of communication between Kafka Broker, Consumer and Producer.
   - DD8: SASL plain will be used for Authentication using Username/Password to connect to Kafka Brokers.
